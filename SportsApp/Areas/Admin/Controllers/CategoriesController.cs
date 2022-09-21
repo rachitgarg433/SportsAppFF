@@ -12,7 +12,7 @@ using SportsApp.Models;
 namespace SportsApp.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles ="Admin1")]
+    [Authorize(Roles ="Authorizer")]
     
     public class CategoriesController : Controller
     {

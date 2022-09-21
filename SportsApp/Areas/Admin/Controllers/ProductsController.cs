@@ -69,7 +69,7 @@ namespace SportsApp.Areas.Admin.Controllers
 
 
         // GET: Admin/Products/Create
-        [Authorize(Roles = "Admin1")]
+        [Authorize(Roles = "Authorizer")]
 
         public IActionResult Create()
         {
