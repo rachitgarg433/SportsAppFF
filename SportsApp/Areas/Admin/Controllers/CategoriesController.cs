@@ -63,9 +63,18 @@ namespace SportsApp.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(category);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                // Check for Duplicates
+                bool isFound = _context.Category.Any(c => c.CategoryName == category.CategoryName);
+                if (isFound)
+                {
+                    ModelState.AddModelError("CategoryName", "Duplicate Category Found!");
+                }
+                else
+                {
+                    _context.Add(category);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
             }
             return View(category);
         }

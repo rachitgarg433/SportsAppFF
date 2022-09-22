@@ -12,14 +12,14 @@ namespace SportsApp.Models
         public int OrderId { get; set; }
 
 
-
+        [Required]
         [Display(Name = "Select Product")]
         public int ProductId { get; set; }
 
         [ForeignKey(nameof(BookingDetail.ProductId))] //mapping foreign key
         public Product Product { get; set; }
 
-
+        [Required]
         public string UserName { get; set; }
 
 
@@ -28,8 +28,10 @@ namespace SportsApp.Models
 
         public int Quantity { get; set; }
 
-        [Required]
+       
         [Display(Name = "Enter Your Mobile Number")]
+        [Required(ErrorMessage = "{0} cannot be empty!!!")]
+        [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Enter only 10 digits!!!")]
         public string MoibileNumber { get; set; }
 
 

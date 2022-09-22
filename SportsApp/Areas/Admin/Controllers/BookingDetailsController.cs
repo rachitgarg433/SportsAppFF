@@ -12,7 +12,7 @@ using SportsApp.Models;
 namespace SportsApp.Areas.Admin.Controllers
 {
     [Area("Admin")]
-  
+
 
     public class BookingDetailsController : Controller
     {
@@ -24,13 +24,13 @@ namespace SportsApp.Areas.Admin.Controllers
         }
 
         // GET: Admin/BookingDetails
-        
+
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.BookingDetail.Include(b => b.Product);
             return View(await applicationDbContext.ToListAsync());
         }
-          public async Task<IActionResult> Index1()
+        public async Task<IActionResult> Index1()
         {
             var applicationDbContext = _context.BookingDetail.Include(b => b.Product);
             return View(await applicationDbContext.ToListAsync());
@@ -73,7 +73,7 @@ namespace SportsApp.Areas.Admin.Controllers
             {
                 _context.Add(bookingDetail);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Details",new{id=bookingDetail.OrderId});
+                return RedirectToAction("Details", new { id = bookingDetail.OrderId });
             }
             ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProuductName", bookingDetail.ProductId);
             return View(bookingDetail);
