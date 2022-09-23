@@ -19,10 +19,10 @@ namespace SportsApp.Models
         public string ProductName { get; set; }
 
         [Required]
-        public string ProductDescription { get; set; }  
+        public string ProductDescription { get; set; }
 
 
-       
+
 
         [Required]
         public string ImgUrl { get; set; }
@@ -34,7 +34,7 @@ namespace SportsApp.Models
         public string SellerName { get; set; }
 
         [Required]
-        [Display(Name ="Price Per Item")]
+        [Display(Name = "Price Per Item")]
         public decimal Price { get; set; }
 
         [Required]

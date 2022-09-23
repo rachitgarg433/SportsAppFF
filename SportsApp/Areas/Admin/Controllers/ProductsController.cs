@@ -40,7 +40,7 @@ namespace SportsApp.Areas.Admin.Controllers
             var products = from m in _context.Product select m;
             if (!String.IsNullOrEmpty(SeachString))
             {
-                products = products.Where(s => s.ProductDescription!.Contains(SeachString));
+                products = products.Where(s => s.ProductName!.Contains(SeachString));
             }
             return View(await products.ToListAsync());
 
