@@ -37,7 +37,7 @@ namespace SportsApp.Models
 
 
         [Required]
-        [Display(Name = "Enter Delevery Address")]
+        [Display(Name = "Enter Delivery Address")]
         public string UserAddress { get; set; }
     }
 }

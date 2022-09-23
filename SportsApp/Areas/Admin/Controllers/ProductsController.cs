@@ -33,21 +33,18 @@ namespace SportsApp.Areas.Admin.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
         //Implementing the search functionality here
+
         [HttpGet]
-        public async Task <IActionResult> Index(string SeachString)
+        public async Task<IActionResult> Index(string SeachString)
         {
             var products = from m in _context.Product select m;
             if (!String.IsNullOrEmpty(SeachString))
             {
-                products = products.Where(s=>s.ProductDescription!.Contains(SeachString));
+                products = products.Where(s => s.ProductDescription!.Contains(SeachString));
             }
-            return View( await products.ToListAsync());
+            return View(await products.ToListAsync());
 
         }
-
-
-
-
         // GET: Admin/Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
