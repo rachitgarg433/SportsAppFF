@@ -56,10 +56,12 @@ namespace SportsApp.Areas.Admin.Controllers
         }
 
         // GET: Admin/BookingDetails/Create
-        public IActionResult Create()
+        public IActionResult Create(int productid)  /**************/
         {
             ViewData["ProductId"] = new SelectList(_context.Product, "ProductId", "ProductName");
-            return View();
+            BookingDetail model=new BookingDetail();
+            model.ProductId=productid;
+            return View(model);
         }
 
         // POST: Admin/BookingDetails/Create

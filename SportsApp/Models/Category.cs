@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
+using System.Text.Json.Serialization;
 
 namespace SportsApp.Models
 {
@@ -19,6 +20,7 @@ namespace SportsApp.Models
         [Display(Name = "Enter Sports Category")]
         public string CategoryName { get; set; }
 
+        [JsonIgnore]
         public List<Product> Products { get; set; }//A list of pruducts that a category can hold multiple products
 
 
