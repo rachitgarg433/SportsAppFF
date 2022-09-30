@@ -46,7 +46,7 @@ namespace SportsApp
                 config.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "LMS Web",
+                    Title = "Sports Web",
                     Description = "Sports Ameneties WebApp - API version 1"
                 });
             });
